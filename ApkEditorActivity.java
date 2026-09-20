@@ -15,6 +15,8 @@ import android.widget.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
@@ -51,6 +53,9 @@ public class ApkEditorActivity extends Activity {
     private String currentDexName;
     private String currentClassName;
     private Method currentMethod;
+
+    // Paquete de la aplicación que contiene el DEX actualmente abierto.
+    private String currentApkPackageName;
 
     private final ArrayList<String> dexNames =
             new ArrayList<String>();
@@ -621,6 +626,27 @@ public class ApkEditorActivity extends Activity {
                 apk =
                         copyApkToCache();
 
+                // Detectar el package real de la APK para separar
+                // las clases propias de las librerías.
+                currentApkPackageName = null;
+                try {
+                    android.content.pm.PackageManager pm =
+                            getPackageManager();
+
+                    android.content.pm.PackageInfo info =
+                            pm.getPackageArchiveInfo(
+                                    apk.getAbsolutePath(),
+                                    0
+                            );
+
+                    if (info != null) {
+                        currentApkPackageName =
+                                info.packageName;
+                    }
+                } catch (Exception ignored) {
+                    // Fallback en isAppClass().
+                }
+
                 ZipFile zip =
                         new ZipFile(apk);
 
@@ -774,11 +800,33 @@ private void showClassList(
     currentDexFile = dexFile;
     currentDexName = dexName;
 
+    // App primero; librerías después.
+    final ArrayList<String> sortedClasses =
+            new ArrayList<String>(classes);
+
+    Collections.sort(
+            sortedClasses,
+            new Comparator<String>() {
+                @Override
+                public int compare(String a, String b) {
+                    int pa = getClassPriority(a);
+                    int pb = getClassPriority(b);
+
+                    if (pa != pb) {
+                        return pa - pb;
+                    }
+
+                    return safeClassName(a)
+                            .compareToIgnoreCase(
+                                    safeClassName(b)
+                            );
+                }
+            }
+    );
+
     statusText.setText(
-            "✓ " +
-            dexName +
-            " cargado. Clases: " +
-            classes.size()
+            "✓ " + dexName +
+            " cargado. Clases: " + classes.size()
     );
 
     TextView title =
@@ -796,85 +844,57 @@ private void showClassList(
 
     editorContainer.addView(
             title,
-            marginParams(
-                    -1,
-                    -2,
-                    0,
-                    0,
-                    0,
-                    8
-            )
+            marginParams(-1, -2, 0, 0, 0, 8)
     );
 
     // =====================================================
-    // BUSCADOR DE CLASES
+    // BUSCADOR
     // =====================================================
 
     EditText classSearch =
             new EditText(this);
 
     classSearch.setHint(
-            "🔎 Buscar clase..."
+            "🔎 Buscar clase, paquete o palabra..."
     );
 
     classSearch.setSingleLine(true);
-
     classSearch.setInputType(
             InputType.TYPE_CLASS_TEXT |
             InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
     );
-
     classSearch.setPadding(
-            dp(12),
-            dp(12),
-            dp(12),
-            dp(12)
+            dp(12), dp(12), dp(12), dp(12)
     );
 
     editorContainer.addView(
             classSearch,
-            marginParams(
-                    -1,
-                    -2,
-                    0,
-                    0,
-                    0,
-                    8
-            )
+            marginParams(-1, -2, 0, 0, 0, 4)
     );
 
-    // =====================================================
-    // CONTADOR
-    // =====================================================
+    // Por defecto SOLO clases de la aplicación.
+    CheckBox showLibraries =
+            new CheckBox(this);
+
+    showLibraries.setText(
+            "Mostrar también librerías (AndroidX/Kotlin/etc.)"
+    );
+    showLibraries.setChecked(false);
+
+    editorContainer.addView(
+            showLibraries,
+            marginParams(-1, -2, 0, 0, 0, 4)
+    );
 
     final TextView classCounter =
-            text(
-                    "Mostrando: " +
-                    classes.size() +
-                    " / " +
-                    classes.size(),
-                    14
-            );
+            text("", 14);
 
-    classCounter.setTextIsSelectable(
-            true
-    );
+    classCounter.setTextIsSelectable(true);
 
     editorContainer.addView(
             classCounter,
-            marginParams(
-                    -1,
-                    -2,
-                    0,
-                    0,
-                    0,
-                    8
-            )
+            marginParams(-1, -2, 0, 0, 0, 8)
     );
-
-    // =====================================================
-    // CONTENEDOR DE CLASES
-    // =====================================================
 
     final LinearLayout classesContainer =
             new LinearLayout(this);
@@ -885,82 +905,75 @@ private void showClassList(
 
     editorContainer.addView(
             classesContainer,
-            new LinearLayout.LayoutParams(
-                    -1,
-                    -2
-            )
+            new LinearLayout.LayoutParams(-1, -2)
     );
-
-    // =====================================================
-    // MOSTRAR / FILTRAR CLASES
-    // =====================================================
 
     final Runnable updateClasses =
             new Runnable() {
-
                 @Override
                 public void run() {
 
                     String filter =
-                            classSearch
-                                    .getText()
+                            classSearch.getText()
                                     .toString()
                                     .trim()
-                                    .toLowerCase(
-                                            Locale.ROOT
-                                    );
+                                    .toLowerCase(Locale.ROOT);
 
-                    classesContainer
-                            .removeAllViews();
+                    boolean includeLibraries =
+                            showLibraries.isChecked();
+
+                    classesContainer.removeAllViews();
 
                     int count = 0;
+                    int appCount = 0;
 
-                    for (String className :
-                            classes) {
+                    for (String className : sortedClasses) {
 
                         if (className == null) {
                             continue;
                         }
 
-                        String searchable =
-                                className
-                                        .toLowerCase(
-                                                Locale.ROOT
-                                        );
+                        boolean appClass =
+                                isAppClass(className);
 
-                        // Si hay búsqueda,
-                        // solamente mostramos
-                        // las clases que coinciden.
-                        if (!filter.isEmpty() &&
-                                !searchable.contains(
-                                        filter
-                                )) {
+                        if (appClass) {
+                            appCount++;
+                        }
 
+                        // Regla principal: no mostrar librerías por defecto.
+                        if (!includeLibraries && !appClass) {
                             continue;
                         }
 
-                        final String selectedClass =
-                                className;
+                        String searchable =
+                                formatClassName(className)
+                                        .toLowerCase(Locale.ROOT);
+
+                        if (!filter.isEmpty() &&
+                                !searchable.contains(filter)) {
+                            continue;
+                        }
+
+                        final String selectedClass = className;
 
                         Button button =
                                 new Button(
                                         ApkEditorActivity.this
                                 );
 
-                        button.setText(
-                                formatClassName(
-                                        selectedClass
-                                )
-                        );
+                        String label =
+                                formatClassName(selectedClass);
 
+                        label =
+                                (includeLibraries && !appClass
+                                        ? "📚 "
+                                        : "📦 ") + label;
+
+                        button.setText(label);
                         button.setGravity(
                                 Gravity.START |
                                 Gravity.CENTER_VERTICAL
                         );
-
-                        // =================================================
-                        // CLICK EN LA CLASE
-                        // =================================================
 
                         button.setOnClickListener(
                                 v -> showClassDetails(
@@ -971,95 +984,61 @@ private void showClassList(
 
                         classesContainer.addView(
                                 button,
-                                marginParams(
-                                        -1,
-                                        -2,
-                                        0,
-                                        0,
-                                        0,
-                                        6
-                                )
+                                marginParams(-1, -2, 0, 0, 0, 6)
                         );
 
                         count++;
                     }
 
-                    // =================================================
-                    // CONTADOR
-                    // =================================================
+                    String scope =
+                            includeLibraries
+                                    ? "todas las clases"
+                                    : "clases de la app";
 
                     classCounter.setText(
-                            "Mostrando: " +
-                            count +
-                            " / " +
-                            classes.size()
+                            "Mostrando: " + count +
+                            " / " + classes.size() +
+                            "  •  " + scope +
+                            "\nPaquete app: " +
+                            (currentApkPackageName == null
+                                    ? "no detectado"
+                                    : currentApkPackageName)
                     );
-
-                    // =================================================
-                    // SIN RESULTADOS
-                    // =================================================
 
                     if (count == 0) {
 
                         TextView empty =
                                 text(
                                         filter.isEmpty()
-                                                ? "No hay clases."
-                                                : "❌ No se encontró ninguna clase que coincida con:\n\n" +
-                                                  filter,
+                                                ? "No hay clases en este modo.\nActiva 'Mostrar también librerías' para ver todas."
+                                                : "❌ No se encontró ninguna clase que coincida con:\n\n" + filter,
                                         14
                                 );
 
                         empty.setPadding(
-                                dp(10),
-                                dp(10),
-                                dp(10),
-                                dp(10)
+                                dp(10), dp(10), dp(10), dp(10)
                         );
 
                         classesContainer.addView(
                                 empty,
-                                marginParams(
-                                        -1,
-                                        -2,
-                                        0,
-                                        4,
-                                        0,
-                                        8
-                                )
+                                marginParams(-1, -2, 0, 4, 0, 8)
                         );
                     }
                 }
             };
 
-    // =====================================================
-    // MOSTRAR TODAS AL INICIO
-    // =====================================================
-
     updateClasses.run();
-
-    // =====================================================
-    // BUSCAR EN TIEMPO REAL
-    // =====================================================
 
     classSearch.addTextChangedListener(
             new android.text.TextWatcher() {
-
                 @Override
                 public void beforeTextChanged(
-                        CharSequence s,
-                        int start,
-                        int count,
-                        int after) {
+                        CharSequence s, int start, int count, int after) {
                 }
 
                 @Override
                 public void onTextChanged(
-                        CharSequence s,
-                        int start,
-                        int before,
-                        int count) {
-
+                        CharSequence s, int start, int before, int count) {
                     updateClasses.run();
                 }
 
@@ -1070,12 +1049,78 @@ private void showClassList(
             }
     );
 
-    // =====================================================
-    // VOLVER
-    // =====================================================
+    showLibraries.setOnCheckedChangeListener(
+            (buttonView, isChecked) -> updateClasses.run()
+    );
 
     createBackToDexButton();
 }
+
+// =========================================================
+// CLASIFICACIÓN DE CLASES
+// =========================================================
+
+private String safeClassName(String className) {
+    return className == null
+            ? ""
+            : formatClassName(className);
+}
+
+private boolean isAppClass(String className) {
+
+    if (className == null) {
+        return false;
+    }
+
+    String name = formatClassName(className).trim();
+
+    if (name.isEmpty()) {
+        return false;
+    }
+
+    // Si conocemos el package de la APK, esta es la regla exacta.
+    if (currentApkPackageName != null &&
+            !currentApkPackageName.isEmpty()) {
+
+        return name.equals(currentApkPackageName) ||
+                name.startsWith(currentApkPackageName + ".");
+    }
+
+    // Fallback cuando no se pudo leer el manifest.
+    String lower = name.toLowerCase(Locale.ROOT);
+
+    String[] libraryPrefixes = {
+            "android.",
+            "androidx.",
+            "kotlin.",
+            "kotlinx.",
+            "java.",
+            "javax.",
+            "sun.",
+            "dalvik.",
+            "org.jetbrains.",
+            "org.intellij.",
+            "com.google.android.",
+            "com.google.gson.",
+            "com.squareup.",
+            "okhttp3.",
+            "retrofit2.",
+            "org.json."
+    };
+
+    for (String prefix : libraryPrefixes) {
+        if (lower.startsWith(prefix)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+private int getClassPriority(String className) {
+    return isAppClass(className) ? 0 : 1;
+}
+
     // =========================================================
     // DETALLES CLASE
     // =========================================================
@@ -4945,4 +4990,4 @@ private void showSearchResults(
 
         return view;
     }
-}
+            }
