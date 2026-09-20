@@ -1,0 +1,1222 @@
+VIP PASS - RESULTADOS
+====================
+
+Modo: ANÁLISIS AUTOMÁTICO
+Resultados: 38
+
+━━━━━━━━━━━━━━━━━━
+#1
+
+DEX: classes.dex
+Clase: Lcom/congvc/recordbackground/ActivityBase;
+Puntuación: 20
+
+Campos:
+  • billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Getters:
+  • Lcom/congvc/recordbackground/ActivityBase;->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Setters:
+  • Lcom/congvc/recordbackground/ActivityBase;->setBillingCommon(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+
+Referencias:
+  • getBillingCommon() -> ActivityBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> MyApplication->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> ActivityBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onResume() -> queryPurchases() ActivityBase onResume
+  • onResume() -> ActivityBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onResume() -> BillingCommonSubAnIap2->queryPurchases()V
+  • setBillingCommon() -> ActivityBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObserversInSetting() -> ActivityBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObserversInSetting() -> BillingCommonSubAnIap2->isPremiumUser()Landroidx/lifecycle/LiveData;
+  • setupObserversInSetting() -> ỗi: billingCommon is NULL -> Đã sử dụng giá trị từ Pref ở bước 1
+
+
+━━━━━━━━━━━━━━━━━━
+#2
+
+DEX: classes.dex
+Clase: Lcom/congvc/recordbackground/FragmentBase;
+Puntuación: 12
+
+Campos:
+  • billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Getters:
+  • Lcom/congvc/recordbackground/FragmentBase;->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Setters:
+  • Lcom/congvc/recordbackground/FragmentBase;->setBillingCommon(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+
+Métodos:
+  • Lcom/congvc/recordbackground/FragmentBase;->isPremiumUser()Z
+
+Referencias:
+  • getBillingCommon() -> FragmentBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> MyApplication->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> FragmentBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setBillingCommon() -> FragmentBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObserversInSetting() -> FragmentBase->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObserversInSetting() -> BillingCommonSubAnIap2->isPremiumUser()Landroidx/lifecycle/LiveData;
+
+
+━━━━━━━━━━━━━━━━━━
+#3
+
+DEX: classes.dex
+Clase: Lcom/congvc/recordbackground/MyApplication;
+Puntuación: 10
+
+Campos:
+  • billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Getters:
+  • Lcom/congvc/recordbackground/MyApplication;->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Referencias:
+  • getBillingCommon() -> MyApplication->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> BillingCommonSubAnIap2-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;)V
+  • onCreate() -> MyApplication->billingCommon:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> BillingCommonSubAnIap2->startConnection()V
+
+
+━━━━━━━━━━━━━━━━━━
+#4
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+Puntuación: 430
+
+Campos:
+  • Companion:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$Companion;
+  • productDetailsMap:Ljava/util/Map;
+  • _allConfirmedPurchasesLiveData:Landroidx/lifecycle/MutableLiveData;
+  • _isBillingReady:Landroidx/lifecycle/MutableLiveData;
+  • allConfirmedPurchasesLiveData:Landroidx/lifecycle/LiveData;
+  • billingClient:Lcom/android/billingclient/api/BillingClient;
+  • isBillingReady:Landroidx/lifecycle/LiveData;
+  • pendingPurchasesParams:Lcom/android/billingclient/api/PendingPurchasesParams;
+  • purchasesUpdatedListener:Lcom/android/billingclient/api/PurchasesUpdatedListener;
+
+Getters:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->getActiveSubscriptionsLiveData()Landroidx/lifecycle/LiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->getAllConfirmedPurchasesLiveData()Landroidx/lifecycle/LiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->getAvailableProductsLiveData()Landroidx/lifecycle/LiveData;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;-><clinit>()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->a(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$fetchProductDetailsByType(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$getBillingClient$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Lcom/android/billingclient/api/BillingClient;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$getContext$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroid/content/Context;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$getProductDetailsMap$cp()Ljava/util/Map;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$get_activeSubscriptionsLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$get_allConfirmedPurchasesLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$get_availableProductsLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$get_isBillingReady$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$get_isPremiumUser$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$handlePurchase(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/Purchase;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$isSubscriptionActive(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/Purchase;)Z
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->access$processEntitlementAfterAcknowledge(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->b(Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;)Ljava/lang/CharSequence;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->fetchProductDetailsByType(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->handlePurchase(Lcom/android/billingclient/api/Purchase;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->isSubscriptionActive(Lcom/android/billingclient/api/Purchase;)Z
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->launchSubsPurchaseFlow$default(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->launchSubsPurchaseFlow$lambda$5(Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;)Ljava/lang/CharSequence;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->processEntitlementAfterAcknowledge()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->purchasesUpdatedListener$lambda$1(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->endClientConnection()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->isBillingReady()Landroidx/lifecycle/LiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->isCurrentlyPremium()Z
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->isPremiumUser()Landroidx/lifecycle/LiveData;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->launchInAppPurchaseFlow(Landroid/app/Activity;Ljava/lang/String;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->launchSubsPurchaseFlow(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->queryAllProductDetails()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->queryPurchases()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;->startConnection()V
+
+Referencias:
+  • <clinit>() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$Companion;
+  • <clinit>() -> BillingCommonSubAnIap2$Companion-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+  • <clinit>() -> BillingCommonSubAnIap2->Companion:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$Companion;
+  • <clinit>() -> BillingCommonSubAnIap2->productDetailsMap:Ljava/util/Map;
+  • <init>() -> BillingCommonSubAnIap2->context:Landroid/content/Context;
+  • <init>() -> BillingCommonSubAnIap2->defaultScope:Lkotlinx/coroutines/CoroutineScope;
+  • <init>() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • <init>() -> BillingCommonSubAnIap2->_isPremiumUser:Landroidx/lifecycle/MutableLiveData;
+  • <init>() -> BillingCommonSubAnIap2->isPremiumUser:Landroidx/lifecycle/LiveData;
+  • <init>() -> BillingCommonSubAnIap2->_isBillingReady:Landroidx/lifecycle/MutableLiveData;
+  • <init>() -> BillingCommonSubAnIap2->isBillingReady:Landroidx/lifecycle/LiveData;
+  • <init>() -> BillingCommonSubAnIap2->_availableProductsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • <init>() -> BillingCommonSubAnIap2->availableProductsLiveData:Landroidx/lifecycle/LiveData;
+  • <init>() -> BillingCommonSubAnIap2->_activeSubscriptionsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • <init>() -> BillingCommonSubAnIap2->activeSubscriptionsLiveData:Landroidx/lifecycle/LiveData;
+  • <init>() -> BillingCommonSubAnIap2->_allConfirmedPurchasesLiveData:Landroidx/lifecycle/MutableLiveData;
+  • <init>() -> BillingCommonSubAnIap2->allConfirmedPurchasesLiveData:Landroidx/lifecycle/LiveData;
+  • <init>() -> b-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • <init>() -> BillingCommonSubAnIap2->purchasesUpdatedListener:Lcom/android/billingclient/api/PurchasesUpdatedListener;
+  • <init>() -> PendingPurchasesParams->newBuilder()Lcom/android/billingclient/api/PendingPurchasesParams$Builder;
+  • <init>() -> PendingPurchasesParams$Builder->enableOneTimeProducts()Lcom/android/billingclient/api/PendingPurchasesParams$Builder;
+  • <init>() -> PendingPurchasesParams$Builder->build()Lcom/android/billingclient/api/PendingPurchasesParams;
+  • <init>() -> BillingCommonSubAnIap2->pendingPurchasesParams:Lcom/android/billingclient/api/PendingPurchasesParams;
+  • <init>() -> BillingClient->newBuilder(Landroid/content/Context;)Lcom/android/billingclient/api/BillingClient$Builder;
+  • <init>() -> BillingClient$Builder->setListener(Lcom/android/billingclient/api/PurchasesUpdatedListener;)Lcom/android/billingclient/api/BillingClient$Builder;
+  • <init>() -> BillingClient$Builder->enablePendingPurchases(Lcom/android/billingclient/api/PendingPurchasesParams;)Lcom/android/billingclient/api/BillingClient$Builder;
+  • <init>() -> BillingClient$Builder->build()Lcom/android/billingclient/api/BillingClient;
+  • <init>() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • <init>() -> BillingCommonSubAnIap2-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;)V
+  • a() -> BillingCommonSubAnIap2->purchasesUpdatedListener$lambda$1(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+  • access$fetchProductDetailsByType() -> BillingCommonSubAnIap2->fetchProductDetailsByType(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • access$getBillingClient$p() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • access$getContext$p() -> BillingCommonSubAnIap2->context:Landroid/content/Context;
+  • access$getProductDetailsMap$cp() -> BillingCommonSubAnIap2->productDetailsMap:Ljava/util/Map;
+  • access$get_activeSubscriptionsLiveData$p() -> BillingCommonSubAnIap2->_activeSubscriptionsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • access$get_allConfirmedPurchasesLiveData$p() -> BillingCommonSubAnIap2->_allConfirmedPurchasesLiveData:Landroidx/lifecycle/MutableLiveData;
+  • access$get_availableProductsLiveData$p() -> BillingCommonSubAnIap2->_availableProductsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • access$get_isBillingReady$p() -> BillingCommonSubAnIap2->_isBillingReady:Landroidx/lifecycle/MutableLiveData;
+  • access$get_isPremiumUser$p() -> BillingCommonSubAnIap2->_isPremiumUser:Landroidx/lifecycle/MutableLiveData;
+  • access$handlePurchase() -> BillingCommonSubAnIap2->handlePurchase(Lcom/android/billingclient/api/Purchase;)V
+  • access$isSubscriptionActive() -> BillingCommonSubAnIap2->isSubscriptionActive(Lcom/android/billingclient/api/Purchase;)Z
+  • access$processEntitlementAfterAcknowledge() -> BillingCommonSubAnIap2->processEntitlementAfterAcknowledge()V
+  • b() -> BillingCommonSubAnIap2->launchSubsPurchaseFlow$lambda$5(Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;)Ljava/lang/CharSequence;
+  • fetchProductDetailsByType() -> BillingCommon
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Product->newBuilder()Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Product$Builder->setProductId(Ljava/lang/String;)Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Product$Builder->setProductType(Ljava/lang/String;)Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Product$Builder->build()Lcom/android/billingclient/api/QueryProductDetailsParams$Product;
+  • fetchProductDetailsByType() -> fetchProductDetailsByType: No product IDs configured for type
+  • fetchProductDetailsByType() -> QueryProductDetailsParams->newBuilder()Lcom/android/billingclient/api/QueryProductDetailsParams$Builder;
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Builder->setProductList(Ljava/util/List;)Lcom/android/billingclient/api/QueryProductDetailsParams$Builder;
+  • fetchProductDetailsByType() -> QueryProductDetailsParams$Builder->build()Lcom/android/billingclient/api/QueryProductDetailsParams;
+  • fetchProductDetailsByType() -> fetchProductDetailsByType: Querying for
+  • fetchProductDetailsByType() -> BillingCommonSubAnIap2->access$getBillingClient$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Lcom/android/billingclient/api/BillingClient;
+  • fetchProductDetailsByType() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$1;
+  • fetchProductDetailsByType() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$1-><init>(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/String;)V
+  • fetchProductDetailsByType() -> BillingClient->queryProductDetailsAsync(Lcom/android/billingclient/api/QueryProductDetailsParams;Lcom/android/billingclient/api/ProductDetailsResponseListener;)V
+  • fetchProductDetailsByType() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$2;
+  • fetchProductDetailsByType() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$2-><init>(Ljava/lang/String;)V
+  • fetchProductDetailsByType() -> fetchProductDetailsByType: Unsupported product type:
+  • handlePurchase() -> Purchase->getPurchaseState()I
+  • handlePurchase() -> BillingCommon
+  • handlePurchase() -> Purchase->isAcknowledged()Z
+  • handlePurchase() -> AcknowledgePurchaseParams->newBuilder()Lcom/android/billingclient/api/AcknowledgePurchaseParams$Builder;
+  • handlePurchase() -> Purchase->getPurchaseToken()Ljava/lang/String;
+  • handlePurchase() -> AcknowledgePurchaseParams$Builder->setPurchaseToken(Ljava/lang/String;)Lcom/android/billingclient/api/AcknowledgePurchaseParams$Builder;
+  • handlePurchase() -> AcknowledgePurchaseParams$Builder->build()Lcom/android/billingclient/api/AcknowledgePurchaseParams;
+  • handlePurchase() -> BillingCommonSubAnIap2->defaultScope:Lkotlinx/coroutines/CoroutineScope;
+  • handlePurchase() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;
+  • handlePurchase() -> BillingCommonSubAnIap2$handlePurchase$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/AcknowledgePurchaseParams;Lcom/android/billingclient/api/Purchase;Lkotlin/coroutines/Continuation;)V
+  • handlePurchase() -> Purchase already acknowledged:
+  • handlePurchase() -> Purchase->getProducts()Ljava/util/List;
+  • handlePurchase() -> BillingCommonSubAnIap2->processEntitlementAfterAcknowledge()V
+  • handlePurchase() -> Purchase is pending for:
+  • handlePurchase() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • handlePurchase() -> BillingCommonSubAnIap2->_isPremiumUser:Landroidx/lifecycle/MutableLiveData;
+  • isSubscriptionActive() -> Purchase->getPurchaseState()I
+  • isSubscriptionActive() -> Purchase->isAcknowledged()Z
+  • launchSubsPurchaseFlow$default() -> BillingCommonSubAnIap2->launchSubsPurchaseFlow(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • launchSubsPurchaseFlow$lambda$5() -> ProductDetails$SubscriptionOfferDetails->getBasePlanId()Ljava/lang/String;
+  • launchSubsPurchaseFlow$lambda$5() -> ProductDetails$SubscriptionOfferDetails->getOfferId()Ljava/lang/String;
+  • processEntitlementAfterAcknowledge() -> BillingCommon
+  • processEntitlementAfterAcknowledge() -> queryPurchases() ads4
+  • processEntitlementAfterAcknowledge() -> BillingCommonSubAnIap2->queryPurchases()V
+  • purchasesUpdatedListener$lambda$1() -> billingResult
+  • purchasesUpdatedListener$lambda$1() -> BillingResult->getResponseCode()I
+  • purchasesUpdatedListener$lambda$1() -> BillingCommon
+  • purchasesUpdatedListener$lambda$1() -> onPurchasesUpdated: Error
+  • purchasesUpdatedListener$lambda$1() -> BillingResult->getDebugMessage()Ljava/lang/String;
+  • purchasesUpdatedListener$lambda$1() -> queryPurchases() ads1
+  • purchasesUpdatedListener$lambda$1() -> BillingCommonSubAnIap2->queryPurchases()V
+  • purchasesUpdatedListener$lambda$1() -> onPurchasesUpdated: User canceled the purchase
+  • purchasesUpdatedListener$lambda$1() -> Lcom/android/billingclient/api/Purchase;
+  • purchasesUpdatedListener$lambda$1() -> BillingCommonSubAnIap2->handlePurchase(Lcom/android/billingclient/api/Purchase;)V
+  • purchasesUpdatedListener$lambda$1() -> onPurchasesUpdated: Null purchase list
+  • endClientConnection() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • endClientConnection() -> BillingClient->isReady()Z
+  • endClientConnection() -> BillingClient->endConnection()V
+  • endClientConnection() -> BillingCommon
+  • endClientConnection() -> BillingClient connection ended.
+  • getActiveSubscriptionsLiveData() -> BillingCommonSubAnIap2->activeSubscriptionsLiveData:Landroidx/lifecycle/LiveData;
+  • getAllConfirmedPurchasesLiveData() -> BillingCommonSubAnIap2->allConfirmedPurchasesLiveData:Landroidx/lifecycle/LiveData;
+  • getAvailableProductsLiveData() -> BillingCommonSubAnIap2->availableProductsLiveData:Landroidx/lifecycle/LiveData;
+  • isBillingReady() -> BillingCommonSubAnIap2->isBillingReady:Landroidx/lifecycle/LiveData;
+  • isCurrentlyPremium() -> BillingCommonSubAnIap2->context:Landroid/content/Context;
+  • isCurrentlyPremium() -> BillingCommon
+  • isPremiumUser() -> BillingCommonSubAnIap2->isPremiumUser:Landroidx/lifecycle/LiveData;
+  • launchInAppPurchaseFlow() -> BillingCommonSubAnIap2->productDetailsMap:Ljava/util/Map;
+  • launchInAppPurchaseFlow() -> Lcom/android/billingclient/api/ProductDetails;
+  • launchInAppPurchaseFlow() -> BillingCommon
+  • launchInAppPurchaseFlow() -> ProductDetails->getProductType()Ljava/lang/String;
+  • launchInAppPurchaseFlow() -> BillingFlowParams$ProductDetailsParams->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
+  • launchInAppPurchaseFlow() -> BillingFlowParams$ProductDetailsParams$Builder->setProductDetails(Lcom/android/billingclient/api/ProductDetails;)Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
+  • launchInAppPurchaseFlow() -> BillingFlowParams$ProductDetailsParams$Builder->build()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
+  • launchInAppPurchaseFlow() -> BillingFlowParams->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$Builder;
+  • launchInAppPurchaseFlow() -> BillingFlowParams$Builder->setProductDetailsParamsList(Ljava/util/List;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+  • launchInAppPurchaseFlow() -> BillingFlowParams$Builder->build()Lcom/android/billingclient/api/BillingFlowParams;
+  • launchInAppPurchaseFlow() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • launchInAppPurchaseFlow() -> BillingClient->launchBillingFlow(Landroid/app/Activity;Lcom/android/billingclient/api/BillingFlowParams;)Lcom/android/billingclient/api/BillingResult;
+  • launchInAppPurchaseFlow() -> launchBillingFlow(...)
+  • launchInAppPurchaseFlow() -> BillingResult->getResponseCode()I
+  • launchInAppPurchaseFlow() -> launchPurchaseFlowForBasePlan: Error
+  • launchInAppPurchaseFlow() -> BillingResult->getDebugMessage()Ljava/lang/String;
+  • launchInAppPurchaseFlow() -> launchPurchaseFlowForBasePlan: Billing flow launched for
+  • launchInAppPurchaseFlow() -> launchInAppPurchaseFlow: ProductDetails not found or not INAPP for ID
+  • launchSubsPurchaseFlow() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • launchSubsPurchaseFlow() -> BillingClient->isReady()Z
+  • launchSubsPurchaseFlow() -> BillingCommon
+  • launchSubsPurchaseFlow() -> launchPurchaseFlowForBasePlan: BillingClient not ready.
+  • launchSubsPurchaseFlow() -> BillingCommonSubAnIap2->productDetailsMap:Ljava/util/Map;
+  • launchSubsPurchaseFlow() -> Lcom/android/billingclient/api/ProductDetails;
+  • launchSubsPurchaseFlow() -> ProductDetails->getProductType()Ljava/lang/String;
+  • launchSubsPurchaseFlow() -> ProductDetails->getSubscriptionOfferDetails()Ljava/util/List;
+  • launchSubsPurchaseFlow() -> Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
+  • launchSubsPurchaseFlow() -> ProductDetails$SubscriptionOfferDetails->getBasePlanId()Ljava/lang/String;
+  • launchSubsPurchaseFlow() -> ProductDetails$SubscriptionOfferDetails->getOfferToken()Ljava/lang/String;
+  • launchSubsPurchaseFlow() -> launchPurchaseFlowForBasePlan: Provided selectedOfferToken
+  • launchSubsPurchaseFlow() -> BillingFlowParams$ProductDetailsParams->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
+  • launchSubsPurchaseFlow() -> BillingFlowParams$ProductDetailsParams$Builder->setProductDetails(Lcom/android/billingclient/api/ProductDetails;)Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
+  • launchSubsPurchaseFlow() -> BillingFlowParams$ProductDetailsParams$Builder->setOfferToken(Ljava/lang/String;)Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams$Builder;
+  • launchSubsPurchaseFlow() -> BillingFlowParams$ProductDetailsParams$Builder->build()Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
+  • launchSubsPurchaseFlow() -> BillingFlowParams->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$Builder;
+  • launchSubsPurchaseFlow() -> BillingFlowParams$Builder->setProductDetailsParamsList(Ljava/util/List;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+  • launchSubsPurchaseFlow() -> BillingFlowParams$Builder->build()Lcom/android/billingclient/api/BillingFlowParams;
+  • launchSubsPurchaseFlow() -> BillingClient->launchBillingFlow(Landroid/app/Activity;Lcom/android/billingclient/api/BillingFlowParams;)Lcom/android/billingclient/api/BillingResult;
+  • launchSubsPurchaseFlow() -> launchBillingFlow(...)
+  • launchSubsPurchaseFlow() -> BillingResult->getResponseCode()I
+  • launchSubsPurchaseFlow() -> launchPurchaseFlowForBasePlan: Error
+  • launchSubsPurchaseFlow() -> BillingResult->getDebugMessage()Ljava/lang/String;
+  • launchSubsPurchaseFlow() -> launchPurchaseFlowForBasePlan: Billing flow launched for
+  • launchSubsPurchaseFlow() -> launchPurchaseFlowForBasePlan: No offer token found for Product ID
+  • launchSubsPurchaseFlow() -> launchSubsPurchaseFlow: ProductDetails not found or not Subs for ID
+  • queryAllProductDetails() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • queryAllProductDetails() -> BillingClient->isReady()Z
+  • queryAllProductDetails() -> BillingCommon
+  • queryAllProductDetails() -> loadAllProductDetails: BillingClient not ready.
+  • queryAllProductDetails() -> BillingCommonSubAnIap2->_availableProductsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • queryAllProductDetails() -> loadAllProductDetails: BillingClient is ready. Fetching product details...
+  • queryAllProductDetails() -> BillingCommonSubAnIap2->defaultScope:Lkotlinx/coroutines/CoroutineScope;
+  • queryAllProductDetails() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;
+  • queryAllProductDetails() -> BillingCommonSubAnIap2$queryAllProductDetails$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • queryPurchases() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • queryPurchases() -> BillingClient->isReady()Z
+  • queryPurchases() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • queryPurchases() -> BillingCommon
+  • queryPurchases() -> BillingCommonSubAnIap2->_isPremiumUser:Landroidx/lifecycle/MutableLiveData;
+  • queryPurchases() -> BillingCommonSubAnIap2->_activeSubscriptionsLiveData:Landroidx/lifecycle/MutableLiveData;
+  • queryPurchases() -> BillingCommonSubAnIap2->_allConfirmedPurchasesLiveData:Landroidx/lifecycle/MutableLiveData;
+  • queryPurchases() -> BillingCommonSubAnIap2->defaultScope:Lkotlinx/coroutines/CoroutineScope;
+  • queryPurchases() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;
+  • queryPurchases() -> BillingCommonSubAnIap2$queryPurchases$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • startConnection() -> BillingCommonSubAnIap2->billingClient:Lcom/android/billingclient/api/BillingClient;
+  • startConnection() -> BillingClient->isReady()Z
+  • startConnection() -> BillingClient is already connected.
+  • startConnection() -> BillingCommon
+  • startConnection() -> BillingCommonSubAnIap2->_isBillingReady:Landroidx/lifecycle/MutableLiveData;
+  • startConnection() -> BillingCommonSubAnIap2->queryAllProductDetails()V
+  • startConnection() -> queryPurchases() ads2
+  • startConnection() -> BillingCommonSubAnIap2->queryPurchases()V
+  • startConnection() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$startConnection$1;
+  • startConnection() -> BillingCommonSubAnIap2$startConnection$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • startConnection() -> BillingClient->startConnection(Lcom/android/billingclient/api/BillingClientStateListener;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#5
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+Puntuación: 386
+
+Campos:
+  • Companion:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$Companion;
+  • adapterPurchase:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • listPurchase:Ljava/util/List;
+  • rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+
+Setters:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$10(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$3(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$4(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$6(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$6$lambda$5(Lcom/android/billingclient/api/ProductDetails;)Ljava/lang/CharSequence;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->setupObservers$lambda$8(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;-><clinit>()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;-><init>()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->bindViews()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->bindViews$lambda$1(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->bindViews$lambda$2(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Landroid/view/View;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->createListPurchase(Ljava/util/List;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->n(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->o(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->onCreate$lambda$0(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->p(Lcom/android/billingclient/api/ProductDetails;)Ljava/lang/CharSequence;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->q(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->r(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Landroid/view/View;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->s(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->t(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->u(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->updateUiBasedOnActiveSubscription(Lcom/android/billingclient/api/Purchase;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->updateUiBasedOnPremiumStatus(Ljava/lang/Boolean;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->updateUiWhenNoActiveSubscription()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->v(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->onCreate(Landroid/os/Bundle;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;->openPlayStoreSubscriptionManagement(Ljava/lang/String;)V
+
+Referencias:
+  • <clinit>() -> Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$Companion;
+  • <clinit>() -> PremiumPurchaseActivity3$Companion-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+  • <clinit>() -> PremiumPurchaseActivity3->Companion:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$Companion;
+  • bindViews() -> PremiumPurchaseActivity3->tvPremiumStatusMessage:Landroid/widget/TextView;
+  • bindViews() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • bindViews() -> PremiumPurchaseActivity3->btHistory:Landroid/widget/Button;
+  • bindViews() -> PremiumPurchaseActivity3->rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+  • bindViews() -> Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • bindViews() -> Lcom/congvc/recordbackground/module/iap/purchaseui/h;
+  • bindViews() -> h-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • bindViews() -> AdapterPurchase-><init>(Lkotlin/jvm/functions/Function1;)V
+  • bindViews() -> PremiumPurchaseActivity3->adapterPurchase:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • bindViews() -> Lcom/congvc/recordbackground/module/iap/purchaseui/i;
+  • bindViews() -> i-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • bindViews$lambda$1() -> itemPurchase
+  • bindViews$lambda$1() -> itemPurchase :
+  • bindViews$lambda$1() -> PremiumPurchase
+  • bindViews$lambda$1() -> ItemPurchase->getIdPlan()Ljava/lang/String;
+  • bindViews$lambda$1() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • bindViews$lambda$1() -> ItemPurchase->getIdProduct()Ljava/lang/String;
+  • bindViews$lambda$1() -> BillingCommonSubAnIap2->launchSubsPurchaseFlow(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • bindViews$lambda$1() -> PremiumPurchaseActivity3->activeSubscriptionProductId:Ljava/lang/String;
+  • bindViews$lambda$1() -> PremiumPurchaseActivity3->openPlayStoreSubscriptionManagement(Ljava/lang/String;)V
+  • bindViews$lambda$1() -> BillingCommonSubAnIap2->launchInAppPurchaseFlow(Landroid/app/Activity;Ljava/lang/String;)V
+  • bindViews$lambda$2() -> PremiumPurchaseActivity3->activeSubscriptionProductId:Ljava/lang/String;
+  • bindViews$lambda$2() -> PremiumPurchaseActivity3->openPlayStoreSubscriptionManagement(Ljava/lang/String;)V
+  • createListPurchase() -> createListPurchase
+  • createListPurchase() -> PremiumPurchase
+  • createListPurchase() -> PremiumPurchaseActivity3->listPurchase:Ljava/util/List;
+  • createListPurchase() -> createListPurchase isCurrentlyPremium
+  • createListPurchase() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • createListPurchase() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • createListPurchase() -> Lcom/android/billingclient/api/ProductDetails;
+  • createListPurchase() -> ProductDetails->getProductId()Ljava/lang/String;
+  • createListPurchase() -> adFreeInAppProductDetails l :
+  • createListPurchase() -> adFreeInAppProductDetails != null :
+  • createListPurchase() -> ProductDetails->getOneTimePurchaseOfferDetails()Lcom/android/billingclient/api/ProductDetails$OneTimePurchaseOfferDetails;
+  • createListPurchase() -> ProductDetails$OneTimePurchaseOfferDetails->getFormattedPrice()Ljava/lang/String;
+  • createListPurchase() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • createListPurchase() -> ItemPurchase-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • createListPurchase() -> listPurchase :
+  • createListPurchase() -> ProductDetails->getSubscriptionOfferDetails()Ljava/util/List;
+  • createListPurchase() -> Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
+  • createListPurchase() -> ProductDetails$SubscriptionOfferDetails->getBasePlanId()Ljava/lang/String;
+  • createListPurchase() -> ProductDetails$SubscriptionOfferDetails->getPricingPhases()Lcom/android/billingclient/api/ProductDetails$PricingPhases;
+  • createListPurchase() -> ProductDetails$PricingPhases->getPricingPhaseList()Ljava/util/List;
+  • createListPurchase() -> Lcom/android/billingclient/api/ProductDetails$PricingPhase;
+  • createListPurchase() -> ProductDetails$PricingPhase->getPriceAmountMicros()J
+  • createListPurchase() -> ProductDetails$PricingPhase->getRecurrenceMode()I
+  • createListPurchase() -> ProductDetails$PricingPhase->getFormattedPrice()Ljava/lang/String;
+  • createListPurchase() -> listPurchase all :
+  • createListPurchase() -> PremiumPurchaseActivity3->adapterPurchase:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • createListPurchase() -> AdapterPurchase->submitList(Ljava/util/List;)V
+  • n() -> PremiumPurchaseActivity3->setupObservers$lambda$4(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • o() -> PremiumPurchaseActivity3->bindViews$lambda$1(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Lkotlin/Unit;
+  • p() -> PremiumPurchaseActivity3->setupObservers$lambda$6$lambda$5(Lcom/android/billingclient/api/ProductDetails;)Ljava/lang/CharSequence;
+  • q() -> PremiumPurchaseActivity3->setupObservers$lambda$3(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+  • r() -> PremiumPurchaseActivity3->bindViews$lambda$2(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Landroid/view/View;)V
+  • s() -> PremiumPurchaseActivity3->setupObservers$lambda$10(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • setupObservers() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObservers() -> BillingCommonSubAnIap2->isBillingReady()Landroidx/lifecycle/LiveData;
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/c;
+  • setupObservers() -> c-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;
+  • setupObservers() -> PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0-><init>(Lkotlin/jvm/functions/Function1;)V
+  • setupObservers() -> BillingCommonSubAnIap2->isPremiumUser()Landroidx/lifecycle/LiveData;
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/d;
+  • setupObservers() -> d-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • setupObservers() -> BillingCommonSubAnIap2->getAvailableProductsLiveData()Landroidx/lifecycle/LiveData;
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/e;
+  • setupObservers() -> e-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • setupObservers() -> BillingCommonSubAnIap2->getAllConfirmedPurchasesLiveData()Landroidx/lifecycle/LiveData;
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/f;
+  • setupObservers() -> f-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • setupObservers() -> BillingCommonSubAnIap2->getActiveSubscriptionsLiveData()Landroidx/lifecycle/LiveData;
+  • setupObservers() -> Lcom/congvc/recordbackground/module/iap/purchaseui/g;
+  • setupObservers() -> g-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • setupObservers$lambda$10() -> PremiumPurchase
+  • setupObservers$lambda$10() -> Lcom/android/billingclient/api/Purchase;
+  • setupObservers$lambda$10() -> Purchase->getPurchaseState()I
+  • setupObservers$lambda$10() -> Purchase->isAcknowledged()Z
+  • setupObservers$lambda$10() -> Purchase->getProducts()Ljava/util/List;
+  • setupObservers$lambda$10() -> PremiumPurchaseActivity3->activeSubscriptionProductId:Ljava/lang/String;
+  • setupObservers$lambda$10() -> PremiumPurchaseActivity3->updateUiBasedOnActiveSubscription(Lcom/android/billingclient/api/Purchase;)V
+  • setupObservers$lambda$10() -> PremiumPurchaseActivity3->updateUiWhenNoActiveSubscription()V
+  • setupObservers$lambda$3() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObservers$lambda$3() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • setupObservers$lambda$3() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • setupObservers$lambda$4() -> PremiumPurchase
+  • setupObservers$lambda$4() -> PremiumPurchaseActivity3->updateUiBasedOnPremiumStatus(Ljava/lang/Boolean;)V
+  • setupObservers$lambda$4() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • setupObservers$lambda$4() -> PremiumPurchaseActivity3->rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+  • setupObservers$lambda$6() -> Lcom/congvc/recordbackground/module/iap/purchaseui/j;
+  • setupObservers$lambda$6() -> j-><init>()V
+  • setupObservers$lambda$6() -> PremiumPurchase
+  • setupObservers$lambda$6() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • setupObservers$lambda$6() -> PremiumPurchaseActivity3->createListPurchase(Ljava/util/List;)V
+  • setupObservers$lambda$6$lambda$5() -> ProductDetails->getProductId()Ljava/lang/String;
+  • setupObservers$lambda$8() -> allConfirmedPurchasesLiveData updated with
+  • setupObservers$lambda$8() -> purchases.
+  • setupObservers$lambda$8() -> PremiumPurchase
+  • setupObservers$lambda$8() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • setupObservers$lambda$8() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->updateUiWhenNoActiveSubscription()V
+  • setupObservers$lambda$8() -> Lcom/android/billingclient/api/Purchase;
+  • setupObservers$lambda$8() -> Purchase->getPurchaseState()I
+  • setupObservers$lambda$8() -> Purchase->isAcknowledged()Z
+  • setupObservers$lambda$8() -> Purchase->getProducts()Ljava/util/List;
+  • setupObservers$lambda$8() -> Purchase->getOrderId()Ljava/lang/String;
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->tvPremiumStatusMessage:Landroid/widget/TextView;
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->btHistory:Landroid/widget/Button;
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->activeSubscriptionProductId:Ljava/lang/String;
+  • setupObservers$lambda$8() -> Purchase->isAutoRenewing()Z
+  • setupObservers$lambda$8() -> Purchase->getPurchaseTime()J
+  • setupObservers$lambda$8() -> Active subscription Product ID (from allPurchases) set to:
+  • setupObservers$lambda$8() -> PremiumPurchaseActivity3->updateUiBasedOnActiveSubscription(Lcom/android/billingclient/api/Purchase;)V
+  • t() -> PremiumPurchaseActivity3->setupObservers$lambda$6(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • u() -> PremiumPurchaseActivity3->onCreate$lambda$0(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
+  • updateUiBasedOnActiveSubscription() -> PremiumPurchaseActivity3->tvPremiumStatusMessage:Landroid/widget/TextView;
+  • updateUiBasedOnActiveSubscription() -> PremiumPurchaseActivity3->btHistory:Landroid/widget/Button;
+  • updateUiBasedOnActiveSubscription() -> PremiumPurchaseActivity3->rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+  • updateUiBasedOnActiveSubscription() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • updateUiBasedOnPremiumStatus() -> PremiumPurchaseActivity3->tvPremiumStatusMessage:Landroid/widget/TextView;
+  • updateUiBasedOnPremiumStatus() -> PremiumPurchaseActivity3->btHistory:Landroid/widget/Button;
+  • updateUiBasedOnPremiumStatus() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • updateUiWhenNoActiveSubscription() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • updateUiWhenNoActiveSubscription() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • updateUiWhenNoActiveSubscription() -> PremiumPurchaseActivity3->tvPremiumStatusMessage:Landroid/widget/TextView;
+  • updateUiWhenNoActiveSubscription() -> PremiumPurchaseActivity3->btHistory:Landroid/widget/Button;
+  • updateUiWhenNoActiveSubscription() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • updateUiWhenNoActiveSubscription() -> PremiumPurchaseActivity3->rvListPurchase:Landroidx/recyclerview/widget/RecyclerView;
+  • updateUiWhenNoActiveSubscription() -> BillingCommonSubAnIap2->getAvailableProductsLiveData()Landroidx/lifecycle/LiveData;
+  • updateUiWhenNoActiveSubscription() -> PremiumPurchaseActivity3->createListPurchase(Ljava/util/List;)V
+  • v() -> PremiumPurchaseActivity3->setupObservers$lambda$8(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/util/List;)Lkotlin/Unit;
+  • onCreate() -> Lcom/congvc/recordbackground/module/iap/purchaseui/b;
+  • onCreate() -> b-><init>()V
+  • onCreate() -> PremiumPurchaseActivity3->bindViews()V
+  • onCreate() -> PremiumPurchaseActivity3->setupObservers()V
+  • onCreate() -> ActivityBase->getBillingCommon()Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onCreate() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • onCreate() -> PremiumPurchaseActivity3->updateUiBasedOnPremiumStatus(Ljava/lang/Boolean;)V
+  • onCreate() -> PremiumPurchaseActivity3->pbLoadingProducts:Landroid/widget/ProgressBar;
+  • openPlayStoreSubscriptionManagement() -> https://play.google.com/store/account/subscriptions?sku=
+
+
+━━━━━━━━━━━━━━━━━━
+#6
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+Puntuación: 136
+
+Campos:
+  • Companion:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion;
+
+Getters:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getBuyName()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getDescription()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getIdPlan()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getIdProduct()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getName()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->getPrice()Ljava/lang/String;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;-><clinit>()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->access$getDiffCallback$cp()Landroidx/recyclerview/widget/DiffUtil$ItemCallback;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->copy$default(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component1()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component2()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component3()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component4()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component5()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->component6()Ljava/lang/String;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->equals(Ljava/lang/Object;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->hashCode()I
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;->toString()Ljava/lang/String;
+
+Referencias:
+  • <clinit>() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion;
+  • <clinit>() -> ItemPurchase$Companion-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+  • <clinit>() -> ItemPurchase->Companion:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion;
+  • <clinit>() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;
+  • <clinit>() -> ItemPurchase$Companion$diffCallback$1-><init>()V
+  • <clinit>() -> ItemPurchase->diffCallback:Landroidx/recyclerview/widget/DiffUtil$ItemCallback;
+  • <init>() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • <init>() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • <init>() -> ItemPurchase->name:Ljava/lang/String;
+  • <init>() -> ItemPurchase->price:Ljava/lang/String;
+  • <init>() -> ItemPurchase->description:Ljava/lang/String;
+  • <init>() -> ItemPurchase->buyName:Ljava/lang/String;
+  • access$getDiffCallback$cp() -> ItemPurchase->diffCallback:Landroidx/recyclerview/widget/DiffUtil$ItemCallback;
+  • copy$default() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->name:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->price:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->description:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->buyName:Ljava/lang/String;
+  • copy$default() -> ItemPurchase->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • component1() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • component2() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • component3() -> ItemPurchase->name:Ljava/lang/String;
+  • component4() -> ItemPurchase->price:Ljava/lang/String;
+  • component5() -> ItemPurchase->description:Ljava/lang/String;
+  • component6() -> ItemPurchase->buyName:Ljava/lang/String;
+  • copy() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • copy() -> ItemPurchase-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  • equals() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • equals() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • equals() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • equals() -> ItemPurchase->name:Ljava/lang/String;
+  • equals() -> ItemPurchase->price:Ljava/lang/String;
+  • equals() -> ItemPurchase->description:Ljava/lang/String;
+  • equals() -> ItemPurchase->buyName:Ljava/lang/String;
+  • getBuyName() -> ItemPurchase->buyName:Ljava/lang/String;
+  • getDescription() -> ItemPurchase->description:Ljava/lang/String;
+  • getIdPlan() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • getIdProduct() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • getName() -> ItemPurchase->name:Ljava/lang/String;
+  • getPrice() -> ItemPurchase->price:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->name:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->price:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->description:Ljava/lang/String;
+  • hashCode() -> ItemPurchase->buyName:Ljava/lang/String;
+  • toString() -> ItemPurchase(idProduct=
+  • toString() -> ItemPurchase->idProduct:Ljava/lang/String;
+  • toString() -> ItemPurchase->idPlan:Ljava/lang/String;
+  • toString() -> ItemPurchase->name:Ljava/lang/String;
+  • toString() -> ItemPurchase->price:Ljava/lang/String;
+  • toString() -> ItemPurchase->description:Ljava/lang/String;
+  • toString() -> ItemPurchase->buyName:Ljava/lang/String;
+
+
+━━━━━━━━━━━━━━━━━━
+#7
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;
+Puntuación: 96
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1;
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->label:I
+  • invokeSuspend() -> is purchased but not acknowledged. It will be processed by handlePurchase.
+  • invokeSuspend() -> BillingCommon
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->L$3:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->L$2:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->L$1:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->L$0:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$getBillingClient$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Lcom/android/billingclient/api/BillingClient;
+  • invokeSuspend() -> QueryPurchasesParams->newBuilder()Lcom/android/billingclient/api/QueryPurchasesParams$Builder;
+  • invokeSuspend() -> QueryPurchasesParams$Builder->setProductType(Ljava/lang/String;)Lcom/android/billingclient/api/QueryPurchasesParams$Builder;
+  • invokeSuspend() -> QueryPurchasesParams$Builder->build()Lcom/android/billingclient/api/QueryPurchasesParams;
+  • invokeSuspend() -> BillingClientKotlinKt->queryPurchasesAsync(Lcom/android/billingclient/api/BillingClient;Lcom/android/billingclient/api/QueryPurchasesParams;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invokeSuspend() -> Lcom/android/billingclient/api/PurchasesResult;
+  • invokeSuspend() -> PurchasesResult->getBillingResult()Lcom/android/billingclient/api/BillingResult;
+  • invokeSuspend() -> BillingResult->getResponseCode()I
+  • invokeSuspend() -> PurchasesResult->getPurchasesList()Ljava/util/List;
+  • invokeSuspend() -> Lcom/android/billingclient/api/Purchase;
+  • invokeSuspend() -> Purchase->getPurchaseState()I
+  • invokeSuspend() -> Purchase->isAcknowledged()Z
+  • invokeSuspend() -> purchase.products SUBS
+  • invokeSuspend() -> Purchase->getProducts()Ljava/util/List;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$isSubscriptionActive(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/Purchase;)Z
+  • invokeSuspend() -> Subscription purchase
+  • invokeSuspend() -> Purchase->getOrderId()Ljava/lang/String;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$handlePurchase(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/Purchase;)V
+  • invokeSuspend() -> Error querying SUBS purchases:
+  • invokeSuspend() -> BillingResult->getDebugMessage()Ljava/lang/String;
+  • invokeSuspend() -> Exception querying SUBS purchases
+  • invokeSuspend() -> purchase.products
+  • invokeSuspend() -> In-app purchase
+  • invokeSuspend() -> Error querying INAPP purchases:
+  • invokeSuspend() -> Exception querying INAPP purchases
+  • invokeSuspend() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/coroutines/Continuation;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#8
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;
+Puntuación: 76
+
+Campos:
+  • $allConfirmedPurchases:Ljava/util/List;
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1$3->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1$3->$activeSubscriptions:Ljava/util/List;
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1$3->$allConfirmedPurchases:Ljava/util/List;
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1$3->$newPremiumState:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • <init>() -> BillingCommonSubAnIap2$queryPurchases$1$3->$isLifetime:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3->$activeSubscriptions:Ljava/util/List;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3->$allConfirmedPurchases:Ljava/util/List;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3->$newPremiumState:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3->$isLifetime:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • create() -> BillingCommonSubAnIap2$queryPurchases$1$3-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/coroutines/Continuation;)V
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1$3->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1$3->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryPurchases$1$3;
+  • invoke() -> BillingCommonSubAnIap2$queryPurchases$1$3->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->label:I
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$get_activeSubscriptionsLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->$activeSubscriptions:Ljava/util/List;
+  • invokeSuspend() -> allConfirmedPurchases withContext
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->$allConfirmedPurchases:Ljava/util/List;
+  • invokeSuspend() -> BillingCommon
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$get_allConfirmedPurchasesLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • invokeSuspend() -> congvc queryPurchases newPremiumState:
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->$newPremiumState:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • invokeSuspend() -> congvc queryPurchases isLifetime:
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryPurchases$1$3->$isLifetime:Lkotlin/jvm/internal/Ref$BooleanRef;
+  • invokeSuspend() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$getContext$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroid/content/Context;
+  • invokeSuspend() -> congvc queryPurchases finalPremiumState:
+  • invokeSuspend() -> congvc queryPurchases currentPremium:
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$get_isPremiumUser$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+
+
+━━━━━━━━━━━━━━━━━━
+#9
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;
+Puntuación: 68
+
+Campos:
+  • $acknowledgePurchaseParams:Lcom/android/billingclient/api/AcknowledgePurchaseParams;
+  • $purchase:Lcom/android/billingclient/api/Purchase;
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/AcknowledgePurchaseParams;Lcom/android/billingclient/api/Purchase;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->a(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->invokeSuspend$lambda$0(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$handlePurchase$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • <init>() -> BillingCommonSubAnIap2$handlePurchase$1->$acknowledgePurchaseParams:Lcom/android/billingclient/api/AcknowledgePurchaseParams;
+  • <init>() -> BillingCommonSubAnIap2$handlePurchase$1->$purchase:Lcom/android/billingclient/api/Purchase;
+  • a() -> BillingCommonSubAnIap2$handlePurchase$1->invokeSuspend$lambda$0(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;)V
+  • invokeSuspend$lambda$0() -> BillingResult->getResponseCode()I
+  • invokeSuspend$lambda$0() -> BillingCommon
+  • invokeSuspend$lambda$0() -> Purchase acknowledged for:
+  • invokeSuspend$lambda$0() -> Purchase->getProducts()Ljava/util/List;
+  • invokeSuspend$lambda$0() -> BillingCommonSubAnIap2->access$processEntitlementAfterAcknowledge(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • invokeSuspend$lambda$0() -> Error acknowledging purchase:
+  • invokeSuspend$lambda$0() -> BillingResult->getDebugMessage()Ljava/lang/String;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;
+  • create() -> BillingCommonSubAnIap2$handlePurchase$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$handlePurchase$1->$acknowledgePurchaseParams:Lcom/android/billingclient/api/AcknowledgePurchaseParams;
+  • create() -> BillingCommonSubAnIap2$handlePurchase$1->$purchase:Lcom/android/billingclient/api/Purchase;
+  • create() -> BillingCommonSubAnIap2$handlePurchase$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/AcknowledgePurchaseParams;Lcom/android/billingclient/api/Purchase;Lkotlin/coroutines/Continuation;)V
+  • invoke() -> BillingCommonSubAnIap2$handlePurchase$1->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$handlePurchase$1->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$handlePurchase$1;
+  • invoke() -> BillingCommonSubAnIap2$handlePurchase$1->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$handlePurchase$1->label:I
+  • invokeSuspend() -> BillingCommonSubAnIap2$handlePurchase$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$getBillingClient$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Lcom/android/billingclient/api/BillingClient;
+  • invokeSuspend() -> BillingCommonSubAnIap2$handlePurchase$1->$acknowledgePurchaseParams:Lcom/android/billingclient/api/AcknowledgePurchaseParams;
+  • invokeSuspend() -> BillingCommonSubAnIap2$handlePurchase$1->$purchase:Lcom/android/billingclient/api/Purchase;
+  • invokeSuspend() -> c-><init>(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • invokeSuspend() -> BillingClient->acknowledgePurchase(Lcom/android/billingclient/api/AcknowledgePurchaseParams;Lcom/android/billingclient/api/AcknowledgePurchaseResponseListener;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#10
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;
+Puntuación: 62
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$queryAllProductDetails$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1->L$0:Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->L$0:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->label:I
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->L$3:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->L$2:Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->L$1:Ljava/lang/Object;
+  • invokeSuspend() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • invokeSuspend() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • invokeSuspend() -> BillingCommon
+  • invokeSuspend() -> loadAllProductDetails: Successfully fetched
+  • invokeSuspend() -> Lcom/android/billingclient/api/ProductDetails;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$getProductDetailsMap$cp()Ljava/util/Map;
+  • invokeSuspend() -> ProductDetails->getProductId()Ljava/lang/String;
+  • invokeSuspend() -> loadAllProductDetails: No product details found for SUBS or INAPP.
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$get_availableProductsLiveData$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+
+
+━━━━━━━━━━━━━━━━━━
+#11
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+Puntuación: 38
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;-><init>(Lkotlin/jvm/functions/Function1;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;->a(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Landroid/view/View;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;->onBindViewHolder$lambda$0(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Landroid/view/View;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;->submitList(Ljava/util/List;)V
+
+Referencias:
+  • <init>() -> ItemPurchase->Companion:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion;
+  • <init>() -> ItemPurchase$Companion->getDiffCallback()Landroidx/recyclerview/widget/DiffUtil$ItemCallback;
+  • <init>() -> AdapterPurchase->click:Lkotlin/jvm/functions/Function1;
+  • a() -> AdapterPurchase->onBindViewHolder$lambda$0(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Landroid/view/View;)V
+  • onBindViewHolder$lambda$0() -> AdapterPurchase->click:Lkotlin/jvm/functions/Function1;
+  • onBindViewHolder() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • onBindViewHolder() -> Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;
+  • onBindViewHolder() -> AdapterPurchase$ItemPurchaseView->loadUI(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)V
+  • onBindViewHolder() -> AdapterPurchase$ItemPurchaseView->getBtBuy()Landroid/widget/TextView;
+  • onBindViewHolder() -> Lcom/congvc/recordbackground/module/iap/purchaseui/a;
+  • onBindViewHolder() -> a-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)V
+  • onCreateViewHolder() -> Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;
+  • onCreateViewHolder() -> AdapterPurchase$ItemPurchaseView-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Landroid/view/View;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#12
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;
+Puntuación: 38
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+
+Getters:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;->getBtBuy()Landroid/widget/TextView;
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;->getView()Landroid/view/View;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Landroid/view/View;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase$ItemPurchaseView;->loadUI(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)V
+
+Referencias:
+  • <init>() -> AdapterPurchase$ItemPurchaseView->this$0:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • <init>() -> AdapterPurchase$ItemPurchaseView->view:Landroid/view/View;
+  • <init>() -> AdapterPurchase$ItemPurchaseView->tvTitle:Landroid/widget/TextView;
+  • <init>() -> AdapterPurchase$ItemPurchaseView->tvDescription:Landroid/widget/TextView;
+  • <init>() -> AdapterPurchase$ItemPurchaseView->tvPrice:Landroid/widget/TextView;
+  • <init>() -> AdapterPurchase$ItemPurchaseView->btBuy:Landroid/widget/TextView;
+  • getBtBuy() -> AdapterPurchase$ItemPurchaseView->btBuy:Landroid/widget/TextView;
+  • getView() -> AdapterPurchase$ItemPurchaseView->view:Landroid/view/View;
+  • loadUI() -> purchase
+  • loadUI() -> AdapterPurchase$ItemPurchaseView->tvTitle:Landroid/widget/TextView;
+  • loadUI() -> ItemPurchase->getName()Ljava/lang/String;
+  • loadUI() -> ItemPurchase->getDescription()Ljava/lang/String;
+  • loadUI() -> ItemPurchase->getPrice()Ljava/lang/String;
+  • loadUI() -> AdapterPurchase$ItemPurchaseView->tvPrice:Landroid/widget/TextView;
+  • loadUI() -> AdapterPurchase$ItemPurchaseView->tvDescription:Landroid/widget/TextView;
+  • loadUI() -> AdapterPurchase$ItemPurchaseView->btBuy:Landroid/widget/TextView;
+  • loadUI() -> ItemPurchase->getBuyName()Ljava/lang/String;
+
+
+━━━━━━━━━━━━━━━━━━
+#13
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$startConnection$1;
+Puntuación: 38
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$startConnection$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$startConnection$1;->onBillingServiceDisconnected()V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$startConnection$1;->onBillingSetupFinished(Lcom/android/billingclient/api/BillingResult;)V
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$startConnection$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onBillingServiceDisconnected() -> BillingCommon
+  • onBillingServiceDisconnected() -> BillingClient service disconnected. Auto-reconnect should handle this.
+  • onBillingServiceDisconnected() -> BillingCommonSubAnIap2$startConnection$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onBillingServiceDisconnected() -> BillingCommonSubAnIap2->access$get_isBillingReady$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • onBillingSetupFinished() -> billingResult
+  • onBillingSetupFinished() -> BillingResult->getResponseCode()I
+  • onBillingSetupFinished() -> BillingCommon
+  • onBillingSetupFinished() -> BillingClient setup successful.
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2$startConnection$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2->access$get_isBillingReady$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2->queryAllProductDetails()V
+  • onBillingSetupFinished() -> queryPurchases() ads3
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2->queryPurchases()V
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2->isCurrentlyPremium()Z
+  • onBillingSetupFinished() -> BillingCommonSubAnIap2->access$get_isPremiumUser$p(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)Landroidx/lifecycle/MutableLiveData;
+
+
+━━━━━━━━━━━━━━━━━━
+#14
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;
+Puntuación: 32
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->label:I
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$inAppDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$fetchProductDetailsByType(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+
+━━━━━━━━━━━━━━━━━━
+#15
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;
+Puntuación: 32
+
+Campos:
+  • this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • create() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lkotlin/coroutines/Continuation;)V
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1;
+  • invoke() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->label:I
+  • invokeSuspend() -> BillingCommonSubAnIap2$queryAllProductDetails$1$subsDetailsJob$1->this$0:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • invokeSuspend() -> BillingCommonSubAnIap2->access$fetchProductDetailsByType(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+
+━━━━━━━━━━━━━━━━━━
+#16
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$1;
+Puntuación: 28
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$1;-><init>(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/String;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$1;->onProductDetailsResponse(Lcom/android/billingclient/api/BillingResult;Lcom/android/billingclient/api/QueryProductDetailsResult;)V
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$1->$continuation:Lkotlinx/coroutines/CancellableContinuation;
+  • <init>() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$1->$productType:Ljava/lang/String;
+  • onProductDetailsResponse() -> billingResult
+  • onProductDetailsResponse() -> productDetailsResponse
+  • onProductDetailsResponse() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$1->$continuation:Lkotlinx/coroutines/CancellableContinuation;
+  • onProductDetailsResponse() -> fetchProductDetailsByType (
+  • onProductDetailsResponse() -> BillingCommon
+  • onProductDetailsResponse() -> BillingResult->getResponseCode()I
+  • onProductDetailsResponse() -> QueryProductDetailsResult->getProductDetailsList()Ljava/util/List;
+  • onProductDetailsResponse() -> getProductDetailsList(...)
+  • onProductDetailsResponse() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$1->$productType:Ljava/lang/String;
+  • onProductDetailsResponse() -> BillingResult->getDebugMessage()Ljava/lang/String;
+
+
+━━━━━━━━━━━━━━━━━━
+#17
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;
+Puntuación: 20
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;-><init>()V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;->areContentsTheSame(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;->areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;->areItemsTheSame(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase$Companion$diffCallback$1;->areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+Referencias:
+  • areContentsTheSame() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • areContentsTheSame() -> ItemPurchase$Companion$diffCallback$1->areContentsTheSame(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Z
+  • areItemsTheSame() -> ItemPurchase->getIdProduct()Ljava/lang/String;
+  • areItemsTheSame() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • areItemsTheSame() -> ItemPurchase$Companion$diffCallback$1->areItemsTheSame(Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Z
+
+
+━━━━━━━━━━━━━━━━━━
+#18
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$2;
+Puntuación: 16
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$2;-><init>(Ljava/lang/String;)V
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+  • Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2$fetchProductDetailsByType$2$2;->invoke(Ljava/lang/Throwable;)V
+
+Referencias:
+  • <init>() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$2->$productType:Ljava/lang/String;
+  • invoke() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$2->invoke(Ljava/lang/Throwable;)V
+  • invoke() -> fetchProductDetailsByType (
+  • invoke() -> BillingCommonSubAnIap2$fetchProductDetailsByType$2$2->$productType:Ljava/lang/String;
+  • invoke() -> BillingCommon
+
+
+━━━━━━━━━━━━━━━━━━
+#19
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;
+Puntuación: 14
+
+Getters:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;->getFunctionDelegate()Lkotlin/Function;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;->equals(Ljava/lang/Object;)Z
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;->hashCode()I
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0;->onChanged(Ljava/lang/Object;)V
+
+Referencias:
+  • <init>() -> PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0->function:Lkotlin/jvm/functions/Function1;
+  • getFunctionDelegate() -> PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0->function:Lkotlin/jvm/functions/Function1;
+  • onChanged() -> PremiumPurchaseActivity3$sam$androidx_lifecycle_Observer$0->function:Lkotlin/jvm/functions/Function1;
+
+
+━━━━━━━━━━━━━━━━━━
+#20
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/c;
+Puntuación: 14
+
+Campos:
+  • a:Lcom/android/billingclient/api/Purchase;
+  • b:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/c;-><init>(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • Lcom/congvc/recordbackground/module/iap/c;->onAcknowledgePurchaseResponse(Lcom/android/billingclient/api/BillingResult;)V
+
+Referencias:
+  • <init>() -> c->a:Lcom/android/billingclient/api/Purchase;
+  • <init>() -> c->b:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onAcknowledgePurchaseResponse() -> c->a:Lcom/android/billingclient/api/Purchase;
+  • onAcknowledgePurchaseResponse() -> c->b:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onAcknowledgePurchaseResponse() -> BillingCommonSubAnIap2$handlePurchase$1->a(Lcom/android/billingclient/api/Purchase;Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#21
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/a;
+Puntuación: 14
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • b:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/a;-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/a;->onClick(Landroid/view/View;)V
+
+Referencias:
+  • <init>() -> a->a:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • <init>() -> a->b:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • onClick() -> a->a:Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;
+  • onClick() -> a->b:Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • onClick() -> AdapterPurchase->a(Lcom/congvc/recordbackground/module/iap/purchaseui/AdapterPurchase;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;Landroid/view/View;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#22
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/h;
+Puntuación: 12
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/h;-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/h;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> h->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> h->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;
+  • invoke() -> PremiumPurchaseActivity3->o(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Lcom/congvc/recordbackground/module/iap/purchaseui/ItemPurchase;)Lkotlin/Unit;
+
+
+━━━━━━━━━━━━━━━━━━
+#23
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/b;
+Puntuación: 10
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/b;-><init>(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;)V
+  • Lcom/congvc/recordbackground/module/iap/b;->onPurchasesUpdated(Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+
+Referencias:
+  • <init>() -> b->a:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onPurchasesUpdated() -> b->a:Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;
+  • onPurchasesUpdated() -> BillingCommonSubAnIap2->a(Lcom/congvc/recordbackground/module/iap/BillingCommonSubAnIap2;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+
+
+━━━━━━━━━━━━━━━━━━
+#24
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/c;
+Puntuación: 10
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/c;-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> c->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> c->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> PremiumPurchaseActivity3->q(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+
+
+━━━━━━━━━━━━━━━━━━
+#25
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/d;
+Puntuación: 10
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/d;-><init>(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;)V
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/d;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+Referencias:
+  • <init>() -> d->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> d->a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+  • invoke() -> PremiumPurchaseActivity3->n(Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;Ljava/lang/Boolean;)Lkotlin/Unit;
+
+
+━━━━━━━━━━━━━━━━━━
+#26
+
+DEX: classes2.dex
+Clase: Lcom/congvc/recordbackground/module/iap/purchaseui/e;
+Puntuación: 10
+
+Campos:
+  • a:Lcom/congvc/recordbackground/module/iap/purchaseui/PremiumPurchaseActivity3;
+
+Métodos:
+  • Lcom/congvc/recordbackground/module/iap/purchaseui/e;-><init>(Lcom/congvc/recordbackground/module/iap/purcha
+
+[CONTENIDO RECORTADO]
